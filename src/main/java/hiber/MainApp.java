@@ -46,15 +46,9 @@ public class MainApp {
       userService.add(user2);
       userService.add(user3);
 
-      List<User> userList = userService.getUserByCar("model3", 5);
+      User user = userService.getUserByCar("model3", 5);
 
-      for (User user : userList) {
-         System.out.println("Id = "+user.getId());
-         System.out.println("First Name = "+user.getFirstName());
-         System.out.println("Last Name = "+user.getLastName());
-         System.out.println("Email = "+user.getEmail());
-         System.out.println();
-      }
+      System.out.println(user.toString());
 
       context.close();
    }

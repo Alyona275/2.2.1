@@ -19,7 +19,7 @@ public class User {
    @Column(name = "email")
    private String email;
 
-   @OneToOne (cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+   @OneToOne (cascade = CascadeType.ALL, fetch = FetchType.EAGER)
    @JoinColumn(name = "car_id")
    private Car car;
 
@@ -69,5 +69,16 @@ public class User {
 
    public void setCar(Car car) {
       this.car = car;
+   }
+
+   @Override
+   public String toString() {
+      return "User{" +
+              "id=" + id +
+              ",\n firstName='" + firstName + '\'' +
+              ",\n lastName='" + lastName + '\'' +
+              ",\n email='" + email + '\'' +
+              ",\n car=" + car +
+              '}';
    }
 }
